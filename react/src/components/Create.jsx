@@ -1,6 +1,7 @@
 import axios from "axios";
 import React, { useState } from 'react';
 import { Link } from "react-router-dom";
+import { Header } from "./Header";
 
 
 export const Create = () => {
@@ -32,31 +33,33 @@ export const Create = () => {
 
     return (
         <div>
-            <header>
-                <nav className='nav'>
-                    <Link to="/" className='home'>home</Link>
-                    <Link to="/create" className='create'>create</Link>
-                </nav>
-            </header>
+            <Header />
             <h1>CreatePost</h1>
             {/* API連携の記述 */}
             <form onSubmit={handleSubmit}>
+                <div>
+                    <input
+                    type="text"
+                    placeholder="title"
+                    name="title"
+                    value={title}
+                    onChange={(e) => setTitle(e.target.value)}
+                    />
+                </div>
+                
+                
                 <input
-                type="text"
-                placeholder="title"
-                name="title"
-                value={title}
-                onChange={(e) => setTitle(e.target.value)}
+                    type="body"
+                    placeholder="body"
+                    name="body"
+                    value={body}
+                    onChange={(e) => setBody(e.target.value)}
+                    
                 />
-
-                <input
-                type="body"
-                placeholder="body"
-                name="body"
-                value={body}
-                onChange={(e) => setBody(e.target.value)}
-                />
-                <button type="submit">Submit</button>
+                <div className="form-btn">
+                    <button type="submit">Submit</button>
+                </div>
+                
             </form>
 
         </div>

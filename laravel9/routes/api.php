@@ -1,7 +1,11 @@
 <?php
 
+use App\Http\Controllers\PostController;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
+
+
+Route::apiResource('posts', PostController::class);
 
 /*
 |--------------------------------------------------------------------------
@@ -20,9 +24,9 @@ use Illuminate\Support\Facades\Route;
 
 // Route::apiResource('posts', PostController::class)->middleware('auth:sanctum');
 
-Route::middleware(['api','cors'])->group(function () {
-    Route::get('/posts', 'PostController@index');
-    Route::get('/posts/{post}', 'PostController@show');
-    Route::post('/posts', 'PostController@store');
-    Route::get('sample', function () { echo 'sample api'; });
-});
+// Route::middleware(['api','cors'])->group(function () {
+//     Route::get('/posts', 'PostController@index');
+//     Route::get('/posts/{post}', 'PostController@show');
+//     Route::post('/posts', 'PostController@store');
+//     Route::get('sample', function () { echo 'sample api'; });
+// });
