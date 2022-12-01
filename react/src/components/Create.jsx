@@ -34,7 +34,7 @@ export const Create = () => {
     return (
         <div>
             <Header />
-            <h1>CreatePost</h1>
+            <h1>New Post</h1>
             {/* API連携の記述 */}
             <form onSubmit={handleSubmit} className="create-form">
                 <div>
