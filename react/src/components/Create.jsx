@@ -36,7 +36,7 @@ export const Create = () => {
             <Header />
             <h1>CreatePost</h1>
             {/* API連携の記述 */}
-            <form onSubmit={handleSubmit}>
+            <form onSubmit={handleSubmit} className="create-form">
                 <div>
                     <input
                     type="text"
@@ -49,6 +49,7 @@ export const Create = () => {
                 
                 
                 <input
+                    className="form-input"
                     type="body"
                     placeholder="body"
                     name="body"
